@@ -1,0 +1,16 @@
+version: "3"
+services:
+  js-app-component-demo:
+    build: .
+    container_name: js-app-component-demo
+    image: cj/node_container
+    working_dir: /usr/src/app
+    tty: true
+    ports:
+      - 9000:9000
+    volumes:
+      - ~/.ssh:/root/.ssh
+      - "./:/usr/src/app:cached"
+      - "../js-react-levelcredit:/usr/src/js-react-levelcredit:cached"
+    environment:
+      - .env

@@ -1,0 +1,15 @@
+[ignore]
+
+[include]
+flow-typed
+
+[libs]
+flow-typed
+
+[lints]
+untyped-type-import=off
+
+[options]
+module.name_mapper='^src/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+
+[strict]
