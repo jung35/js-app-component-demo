@@ -14,7 +14,13 @@ module.exports = {
     filename: "[contenthash].js",
   },
   resolve: {
-    alias: { src: path.resolve(__dirname, "./src"), react: path.resolve("./node_modules/react") },
+    alias: {
+      src: path.resolve(__dirname, "./src"),
+      react: path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom"),
+      "react-jss": path.resolve("./node_modules/react-jss"),
+      "@babel": path.resolve("./node_modules/@babel"),
+    },
   },
   devServer: {
     index: "src/index.html",
