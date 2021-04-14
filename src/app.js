@@ -2,7 +2,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 
-import { LevelCreditProvider } from "@credit-jeeves/js-react-levelcredit";
+import { LevelCreditProvider } from "@levelcredit/js-react-levelcredit";
 import ScoreAPIDemo from "./ScoreAPI";
 
 function App() {

@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { useScoreAPI } from "@credit-jeeves/js-react-levelcredit";
+import { useScoreAPI } from "@levelcredit/js-react-levelcredit";
 
 type HookDemoProps = {| display_token: string |};
 
