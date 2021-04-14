@@ -1,5 +1,5 @@
 {
-  "name": "js-app-component-demo",
+  "name": "@levelcredit/js-app-component-demo",
   "version": "1.0.0",
   "description": "React component testing playground",
   "main": "src/app.js",
@@ -12,7 +12,7 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-flow": "^7.13.13",
     "@babel/preset-react": "^7.13.13",
-    "@credit-jeeves/js-react-levelcredit": "file:../js-react-levelcredit",
+    "@levelcredit/js-react-levelcredit": "file:../js-react-levelcredit",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "eslint": "^7.23.0",

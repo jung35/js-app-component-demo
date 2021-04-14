@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 
-import { ScoreAPIChart } from "@credit-jeeves/js-react-levelcredit";
+import { ScoreAPIChart } from "@levelcredit/js-react-levelcredit";
 
 type ChartDemoProps = {| display_token: string |};
 

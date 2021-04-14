@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ../js-react-levelcredit
+npm run build
