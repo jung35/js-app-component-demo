@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -14,7 +15,13 @@ module.exports = {
     filename: "[contenthash].js",
   },
   resolve: {
-    alias: { src: path.resolve(__dirname, "./src"), react: path.resolve("./node_modules/react") },
+    alias: {
+      src: path.resolve(__dirname, "./src"),
+      react: path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom"),
+      "react-jss": path.resolve("./node_modules/react-jss"),
+      "@babel": path.resolve("./node_modules/@babel"),
+    },
   },
   devServer: {
     index: "src/index.html",
@@ -25,6 +32,7 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       filename: "./index.html",
       template: "src/html.ejs",

@@ -11,6 +11,5 @@ services:
     volumes:
       - ~/.ssh:/root/.ssh
       - "./:/usr/src/app:cached"
-      - "../js-react-levelcredit:/usr/src/js-react-levelcredit:cached"
     environment:
       - .env
