@@ -4,3 +4,4 @@ docker-compose up -d
 bin/docker-app bin/app-install
 bin/docker-app bin/component-install
 bin/docker-app bin/component-build
+bin/docker-app bin/app-start

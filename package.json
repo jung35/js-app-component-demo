@@ -16,6 +16,7 @@
     "@levelcredit/js-react-levelcredit": "file:../js-react-levelcredit",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "dotenv-webpack": "^7.0.2",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-babel": "^5.3.1",
