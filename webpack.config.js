@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
@@ -20,6 +22,7 @@ module.exports = {
       react: path.resolve("./node_modules/react"),
       "react-dom": path.resolve("./node_modules/react-dom"),
       "react-jss": path.resolve("./node_modules/react-jss"),
+      moment: path.resolve("./node_modules/moment"),
       "@babel": path.resolve("./node_modules/@babel"),
     },
   },
