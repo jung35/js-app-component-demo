@@ -11,5 +11,6 @@ services:
     volumes:
       - ~/.ssh:/root/.ssh
       - "./:/usr/src/app:cached"
+      - "../js-react-levelcredit:/usr/src/component:cached"
     environment:
-      - .env
+      GITHUB_PRIVATE_TOKEN: ${GITHUB_PRIVATE_TOKEN}

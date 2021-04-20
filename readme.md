@@ -1,4 +1,4 @@
-# Levelcredit Component Demo
+# LevelCredit Component Demo
 While react component library is built with typescript, it compiles into CommonJS and includes definition types.
 
 Here, we won't be using typescript but es6 with flow.
