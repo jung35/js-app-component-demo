@@ -1,11 +1,29 @@
 // @flow
 import * as React from "react";
+import injectSheet from "react-jss";
 
 import { ScoreAPIChart } from "@levelcredit/js-react-levelcredit";
 
-type ChartDemoProps = {| display_token: string |};
+type ChartDemoProps = {| display_token: string, classes: any |};
 
-export default function ChartDemo(props: ChartDemoProps): React.Node {
+// custom css
+const styles = {
+  XAxisStyles: {
+    fontSize: 12,
+    fill: "red",
+    textAnchor: "end",
+    x: 0,
+    y: 0,
+    transform: "rotate(-35deg) translate(0, 15px)",
+  },
+  LineStyles: {
+    "& path": { stroke: "green" },
+    "& circle": { stroke: "green" },
+  },
+};
+
+function ChartDemo(props: ChartDemoProps): React.Node {
+  const classes = props.classes;
   const [parse_style, setParseStyle] = React.useState("12-scores");
 
   const onChangeParseStyle = React.useCallback(function (e) {
@@ -16,7 +34,11 @@ export default function ChartDemo(props: ChartDemoProps): React.Node {
     <div className="ChartDemo" style={{ margin: "30px 0" }}>
       <h2>Chart Component Demo (&lt;ScoreAPIChart /&gt;)</h2>
 
-      <ScoreAPIChart display_token={props.display_token} dataParseStyle={parse_style} />
+      <ScoreAPIChart
+        display_token={props.display_token}
+        dataParseStyle={parse_style}
+        classes={{ XAxisStyles: classes.XAxisStyles, LineStyles: classes.LineStyles }}
+      />
 
       <div className="custom-changes">
         <label>
@@ -39,3 +61,5 @@ export default function ChartDemo(props: ChartDemoProps): React.Node {
     </div>
   );
 }
+
+export default (injectSheet(styles)(ChartDemo): any);
