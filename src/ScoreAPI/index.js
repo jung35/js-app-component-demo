@@ -2,6 +2,7 @@
 import * as React from "react";
 import ChartDemo from "./ChartDemo";
 import HookDemo from "./HookDemo";
+import ScoreDemo from "./ScoreDemo";
 
 export default function ScoreAPIDemo(): React.Node {
   const params = React.useMemo(function () {
@@ -70,6 +71,8 @@ export default function ScoreAPIDemo(): React.Node {
 
       {display_token && (
         <>
+          <ScoreDemo display_token={display_token} />
+          <hr />
           <ChartDemo display_token={display_token} />
           <hr />
           <HookDemo display_token={display_token} />
