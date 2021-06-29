@@ -24,7 +24,7 @@ const styles = {
 
 function ScoreDemo(props: ScoreDemoProps): React.Node {
   const classes = props.classes;
-  const [parse_style, setParseStyle] = React.useState("pie" /* "simple" */);
+  const [parse_style, setParseStyle] = React.useState("simple");
 
   const onChangeParseStyle = React.useCallback(function (e) {
     setParseStyle(e.target.value);
@@ -48,7 +48,7 @@ function ScoreDemo(props: ScoreDemoProps): React.Node {
             value={parse_style}
             style={{ fontSize: 16, padding: "5px 15px", border: "1px solid #999", width: "100%" }}
           >
-            {["simple", "pie"].map(function (value) {
+            {["simple", "donut"].map(function (value) {
               return (
                 <option key={value} value={value}>
                   {value}
