@@ -2,7 +2,7 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 
-import { ScoreAPIChart } from "@levelcredit/js-react-levelcredit";
+import { ScoreChart } from "@levelcredit/js-react-levelcredit";
 
 type ChartDemoProps = {| display_token: string, classes: any |};
 
@@ -32,9 +32,9 @@ function ChartDemo(props: ChartDemoProps): React.Node {
 
   return (
     <div className="ChartDemo" style={{ margin: "30px 0" }}>
-      <h2>Chart Component Demo (&lt;ScoreAPIChart /&gt;)</h2>
+      <h2>Chart Component Demo (&lt;ScoreChart /&gt;)</h2>
 
-      <ScoreAPIChart
+      <ScoreChart
         display_token={props.display_token}
         dataParseStyle={parse_style}
         classes={{ XAxisStyles: classes.XAxisStyles, LineStyles: classes.LineStyles }}
