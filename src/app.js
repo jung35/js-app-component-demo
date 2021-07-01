@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 
 import { LevelCreditProvider } from "@levelcredit/js-react-levelcredit";
-import ScoreAPIDemo from "./ScoreAPI";
+import CreditAPIDemo from "./CreditAPI";
 
 const LC_ENV = process.env.LC_ENV || undefined;
 const LC_API_URL = process.env.LC_API_URL || undefined;
@@ -13,7 +13,7 @@ function App() {
     <div id="App">
       <LevelCreditProvider env={LC_ENV} api_url={LC_API_URL}>
         <div className="AppChart" style={{ maxWidth: 700, margin: "auto" }}>
-          <ScoreAPIDemo />
+          <CreditAPIDemo />
         </div>
       </LevelCreditProvider>
     </div>

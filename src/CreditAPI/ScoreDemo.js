@@ -2,7 +2,7 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 
-import { ScoreAPIScore } from "@levelcredit/js-react-levelcredit";
+import { ScoreDisplay } from "@levelcredit/js-react-levelcredit";
 
 type ScoreDemoProps = {| display_token: string, classes: any |};
 
@@ -32,9 +32,9 @@ function ScoreDemo(props: ScoreDemoProps): React.Node {
 
   return (
     <div className="ScoreDemo" style={{ margin: "30px 0" }}>
-      <h2>Score Component Demo (&lt;ScoreAPIScore /&gt;)</h2>
+      <h2>Score Component Demo (&lt;ScoreDisplay /&gt;)</h2>
 
-      <ScoreAPIScore
+      <ScoreDisplay
         display_token={props.display_token}
         dataDisplayStyle={parse_style}
         classes={{ SimpleScoreDisplay: classes.SimpleScoreDisplay }}
