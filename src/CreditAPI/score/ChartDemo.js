@@ -8,7 +8,7 @@ type ChartDemoProps = {| display_token: string, classes: any |};
 
 // custom css
 const styles = {
-  XAxisStyles: {
+  XAxis: {
     fontSize: 12,
     fill: "red",
     textAnchor: "end",
@@ -16,7 +16,7 @@ const styles = {
     y: 0,
     transform: "rotate(-35deg) translate(0, 15px)",
   },
-  LineStyles: {
+  Line: {
     "& path": { stroke: "green" },
     "& circle": { stroke: "green" },
   },
@@ -34,11 +34,7 @@ function ChartDemo(props: ChartDemoProps): React.Node {
     <div className="ChartDemo" style={{ margin: "30px 0" }}>
       <h2>Chart Component Demo (&lt;ScoreChart /&gt;)</h2>
 
-      <ScoreChart
-        display_token={props.display_token}
-        dataParseStyle={parse_style}
-        classes={{ XAxisStyles: classes.XAxisStyles, LineStyles: classes.LineStyles }}
-      />
+      <ScoreChart display_token={props.display_token} dataParseStyle={parse_style} classes={classes} />
 
       <div className="custom-changes">
         <label>
