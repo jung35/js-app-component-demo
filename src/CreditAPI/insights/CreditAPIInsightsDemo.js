@@ -4,6 +4,7 @@ import useDisplayToken from "../useDisplayToken";
 import DisplayTokenInput from "../DisplayTokenInput";
 import HookDemo from "./HookDemo";
 import AccountSummaryDemo from "./AccountSummaryDemo";
+import CreditBalanceDemo from "./CreditBalanceDemo";
 
 const INSIGHTS_DISPLAY_TOKEN_PARAM = "idt";
 
@@ -18,6 +19,8 @@ export default function CreditAPIInsightsDemo(): React.Node {
       {display_token && (
         <>
           <hr style={{ margin: "30px 0" }} />
+          <CreditBalanceDemo display_token={display_token} />
+          <hr />
           <AccountSummaryDemo display_token={display_token} />
           <hr />
           <HookDemo display_token={display_token} />
