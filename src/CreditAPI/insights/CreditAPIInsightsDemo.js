@@ -7,6 +7,7 @@ import AccountSummaryDemo from "./AccountSummaryDemo";
 import CreditBalanceDemo from "./CreditBalanceDemo";
 import CreditUtilizationDemo from "./CreditUtilizationDemo";
 import HardInquiryDemo from "./HardInquiryDemo";
+import LoanTypeDemo from "./LoanTypeDemo";
 
 const INSIGHTS_DISPLAY_TOKEN_PARAM = "idt";
 
@@ -21,6 +22,8 @@ export default function CreditAPIInsightsDemo(): React.Node {
       {display_token && (
         <>
           <hr style={{ margin: "30px 0" }} />
+          <LoanTypeDemo display_token={display_token} />
+          <hr />
           <HardInquiryDemo display_token={display_token} />
           <hr />
           <CreditUtilizationDemo display_token={display_token} />
