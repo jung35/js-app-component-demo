@@ -31,7 +31,7 @@ const styles = {
 
     "& + &": {
       "&:nth-child(even)": {
-        width: "calc(50% - 1px)",
+        width: "calc(50% - 1.5px)",
         borderLeft: "1px solid #ccc",
 
         "@media (min-width: 600px)": {
@@ -40,7 +40,7 @@ const styles = {
 
           "&:not(:nth-child(4))": {
             borderLeft: "1px solid #ccc",
-            width: "calc(33.33% - 1px)",
+            width: "calc(33.33% - 1.5px)",
           },
         },
       },
@@ -48,7 +48,7 @@ const styles = {
       "@media (min-width: 600px)": {
         "&:not(:nth-child(4))": {
           borderLeft: "1px solid #ccc",
-          width: "calc(33.33% - 1px)",
+          width: "calc(33.33% - 1.5px)",
         },
       },
     },
