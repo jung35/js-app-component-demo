@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Create self-signed cert
+CreateKey () {
+openssl req -newkey rsa:2048 -nodes \
+  -keyout bin/certs/"$1".key \
+  -x509 -days 365 \
+  -out bin/certs/"$1".crt \
+  -subj "/C=US/ST=California/L=Santa Barbara/O=Level Credit/OU=Egineering/CN=levelcredit.com"
+}
+
+mkdir -p ./bin/certs/
+
+CreateKey default
+CreateKey app.dev.rt-devel.com

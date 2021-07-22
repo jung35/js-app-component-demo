@@ -68,6 +68,6 @@ errorShots/
 *.zip
 ._*
 .DS_Store
-bin/nginx/certs
+bin/certs
 test_eslint.xml
 *.scss.flow

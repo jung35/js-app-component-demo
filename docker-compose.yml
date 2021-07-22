@@ -1,16 +1,29 @@
 version: "3"
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "./bin/certs:/etc/nginx/certs"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
   js-app-component-demo:
     build: .
     container_name: js-app-component-demo
     image: cj/node_container
     working_dir: /usr/src/app
     tty: true
-    ports:
-      - 9000:9000
+    expose:
+      - "9000"
     volumes:
       - ~/.ssh:/root/.ssh
       - "./:/usr/src/app:cached"
       - "../js-react-levelcredit:/usr/src/js-react-levelcredit:cached"
+      - "../js-lib-api:/usr/src/js-lib-api:cached"
     environment:
       GITHUB_PRIVATE_TOKEN: ${GITHUB_PRIVATE_TOKEN}
+      VIRTUAL_HOST: "app.dev.rt-devel.com"
+      VIRTUAL_PORT: "443"
