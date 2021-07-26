@@ -4,8 +4,8 @@ While react component library is built with typescript, it compiles into CommonJ
 Here, we won't be using typescript but es6 with flow.
 
 ## Setting up
-1. Install the ui library on the same parent folder with its original repository name `js-react-levelcredit`
-2. cd into `js-react-levelcredit/` and run command `bin/generate-certs`
+1. Install the ui library on the same parent folder with its original repository name `js-app-component-demo`
+2. cd into `js-app-component-demo/` and run command `bin/generate-certs`
 3. Open up `/etc/hosts` file as admin and append the line below to end of the file
     ```
     127.0.0.1 app.dev.rt-devel.com
