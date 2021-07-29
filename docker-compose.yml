@@ -24,6 +24,5 @@ services:
       - "../js-react-levelcredit:/usr/src/js-react-levelcredit:cached"
       - "../js-lib-api:/usr/src/js-lib-api:cached"
     environment:
-      GITHUB_PRIVATE_TOKEN: ${GITHUB_PRIVATE_TOKEN}
       VIRTUAL_HOST: "app.dev.rt-devel.com"
       VIRTUAL_PORT: "443"
