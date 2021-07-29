@@ -2,20 +2,20 @@
 import * as React from "react";
 import injectSheet from "react-jss/lib/injectSheet";
 
-type DisplayTokenInputProps = {
+type URLParamInputProps = {
   classes: { DisplayToken: String, UpdateButton: String },
-  display_token: string,
+  param_value: string,
   label: React.Node,
-  onUpdate: (display_token: string) => void,
+  onUpdate: (param_value: string) => void,
 };
 
-function DisplayTokenInput(props: DisplayTokenInputProps): React.Node {
-  const display_token = props.display_token;
+function URLParamInput(props: URLParamInputProps): React.Node {
+  const param_value = props.param_value;
   const classes = props.classes;
   const label = props.label;
   const onUpdate = props.onUpdate;
 
-  const [temp_token, setTempToken] = React.useState(display_token);
+  const [temp_token, setTempToken] = React.useState(param_value);
 
   const onChangeToken = React.useCallback(function (e) {
     const value = e.target.value;
@@ -38,7 +38,7 @@ function DisplayTokenInput(props: DisplayTokenInputProps): React.Node {
         <input onChange={onChangeToken} value={temp_token} className={classes.DisplayToken} />
       </label>
 
-      {display_token !== temp_token && (
+      {param_value !== temp_token && (
         <button className={classes.UpdateButton} onClick={onClickUpdate}>
           Update token
         </button>
@@ -66,4 +66,4 @@ const styles = {
   },
 };
 
-export default (injectSheet(styles)(DisplayTokenInput): any);
+export default (injectSheet(styles)(URLParamInput): any);
