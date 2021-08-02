@@ -16,19 +16,8 @@ const styles = {
 
 function HookDemo(props: HookDemoProps): React.Node {
   const classes = props.classes;
-  const [insights, setInsights] = React.useState(null);
-  const fetchInsights = useInsights();
 
-  React.useEffect(
-    function () {
-      (async function () {
-        setInsights(null);
-        const insights = await fetchInsights(props.display_token);
-        setInsights(insights);
-      })();
-    },
-    [fetchInsights, props.display_token]
-  );
+  const [insights] = useInsights(props.display_token);
 
   return (
     <div className="HookDemo" style={{ margin: "30px 0" }}>
