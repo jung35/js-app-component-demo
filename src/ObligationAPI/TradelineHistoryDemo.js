@@ -13,7 +13,7 @@ const TRADELINE_HISTORY_ID_URL_PARAM = "thiup";
 
 function TradelineHistoryDemo(props: TradelineHistoryDemoProps): React.Node {
   const classes = props.classes;
-  const [obligation_type, setObligationType] = useURLParam(TRADELINE_HISTORY_TYPE_URL_PARAM, "contract");
+  const [obligation_type, setObligationType] = useURLParam(TRADELINE_HISTORY_TYPE_URL_PARAM, "contracts");
   const [obligation_id, setObligationID] = useURLParam(TRADELINE_HISTORY_ID_URL_PARAM);
 
   const onChangeObligationType = React.useCallback(
@@ -41,7 +41,7 @@ function TradelineHistoryDemo(props: TradelineHistoryDemoProps): React.Node {
             value={obligation_type}
             style={{ fontSize: 16, padding: "5px 15px", border: "1px solid #999", width: "100%" }}
           >
-            {["contract", "leases", "utilities"].map(function (value) {
+            {["contracts", "leases", "utilities"].map(function (value) {
               return (
                 <option key={value} value={value}>
                   {value}
