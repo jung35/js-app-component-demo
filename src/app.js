@@ -7,6 +7,8 @@ import CreditAPIDemo from "./CreditAPI";
 import ObligationAPIDemo from "./ObligationAPI";
 import useURLParam from "./hooks/useURLParam";
 import URLParamInput from "./components/URLParamInput";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav";
 
 const LC_ENV = process.env.LC_ENV || undefined;
 const LC_API_URL = process.env.LC_API_URL || undefined;
@@ -47,11 +49,19 @@ function App() {
       <URLParamInput label="User Auth Token" param_value={auth_token} onUpdate={setAuthToken} />
 
       <hr style={{ margin: "30px 0" }} />
+      <Nav />
+
+      <hr style={{ margin: "30px 0" }} />
 
       <LevelCreditProvider env={LC_ENV} api_url={LC_API_URL} auth_token={auth_token} auth_type={auth_type}>
-        <ObligationAPIDemo />
-        <hr style={{ margin: "30px 0" }} />
-        <CreditAPIDemo />
+        <Switch>
+          <Route path="/obligation-api">
+            <ObligationAPIDemo />
+          </Route>
+          <Route path="/credit-api">
+            <CreditAPIDemo />
+          </Route>
+        </Switch>
       </LevelCreditProvider>
     </div>
   );
@@ -60,5 +70,10 @@ function App() {
 const root = document.getElementById("root");
 
 if (root) {
-  ReactDOM.render(<App />, root);
+  ReactDOM.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    root
+  );
 }
