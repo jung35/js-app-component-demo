@@ -1,13 +1,13 @@
 // @flow
 import * as React from "react";
+import { useHistory } from "react-router-dom";
 
 export default function useURLParam(
   param_key: string,
   default_value?: string
 ): [string, (param_value: string) => void] {
-  const params = React.useMemo(function () {
-    return new URLSearchParams(window.location.search);
-  }, []);
+  const history = useHistory();
+  const params = new URLSearchParams(history.location.search);
 
   const [param_value, setDisplayToken] = React.useState(params.get(param_key) || default_value || "");
 
@@ -17,12 +17,12 @@ export default function useURLParam(
 
   React.useEffect(
     function () {
-      const updated_params = new URLSearchParams(window.location.search);
+      const updated_params = new URLSearchParams(history.location.search);
 
       updated_params.set(param_key, param_value);
-      window.history.pushState(null, "", `/?${updated_params.toString()}`);
+      history.push({ ...history.location, search: updated_params.toString() });
     },
-    [param_value, param_key]
+    [param_value, param_key, history]
   );
 
   return [param_value, onUpdateToken];
