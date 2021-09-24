@@ -1,14 +1,14 @@
 // @flow
 import ReactDOM from "react-dom";
 import React from "react";
-
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { LevelCreditProvider } from "@levelcredit/js-react-levelcredit";
-import CreditAPIDemo from "./CreditAPI";
-import ObligationAPIDemo from "./ObligationAPI";
 import useURLParam from "./hooks/useURLParam";
 import URLParamInput from "./components/URLParamInput";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import CreditAPIDemo from "./CreditAPI";
+import ObligationAPIDemo from "./ObligationAPI";
+import ProtectionAPIDemo from "./ProtectionAPI";
 
 const LC_ENV = process.env.LC_ENV || undefined;
 const LC_API_URL = process.env.LC_API_URL || undefined;
@@ -60,6 +60,9 @@ function App() {
           </Route>
           <Route path="/credit-api">
             <CreditAPIDemo />
+          </Route>
+          <Route path="/protection-api">
+            <ProtectionAPIDemo />
           </Route>
         </Switch>
       </LevelCreditProvider>
