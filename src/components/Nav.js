@@ -29,6 +29,15 @@ function Nav(props: NavProps) {
             Credit API Demo
           </NavLink>
         </li>
+        <li className={classes.NavItem}>
+          <NavLink
+            className={classes.NavLink}
+            activeClassName={classes.NavLinkActive}
+            to={(location) => ({ ...location, pathname: "/protection-api" })}
+          >
+            Protection API Demo
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

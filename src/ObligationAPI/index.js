@@ -2,7 +2,7 @@
 import * as React from "react";
 import TradelineHistoryDemo from "./TradelineHistoryDemo";
 
-export default function CreditAPIDemo(): React.Node {
+export default function ObligationAPIDemo(): React.Node {
   return (
     <>
       <TradelineHistoryDemo />
