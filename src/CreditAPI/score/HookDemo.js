@@ -22,7 +22,7 @@ function HookDemo(props: HookDemoProps): React.Node {
     <div className="HookDemo" style={{ margin: "30px 0" }}>
       <h2>React Hook Demo (useScore)</h2>
       <pre className={classes.Code}>
-        <code>{(scores && JSON.stringify(scores, null, 2)) || "no_scores"}</code>
+        <code style={{ whiteSpace: "pre-wrap" }}>{(scores && JSON.stringify(scores, null, 2)) || "no_scores"}</code>
       </pre>
     </div>
   );
